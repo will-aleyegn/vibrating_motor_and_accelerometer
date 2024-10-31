@@ -3,7 +3,7 @@
 ## Hardware Components
 - Raspberry Pi (with GPIO pins)
 - MPU6050 Accelerometer/Gyroscope module
-- Small 3V DC motor (0.06W, ~20mA)
+- Small 3V DC vibrating motor (0.06W, ~20mA) [https://www.amazon.com/gp/product/B0967SC28N/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1]
 
 ## Pin Connections
 
@@ -25,35 +25,6 @@
 | Positive    | GPIO 18 (Pin 12)| Control signal |
 | Negative    | Ground Pin      | Ground      |
 
-## Circuit Diagram
-```
-GPIO18 (Pin 12) ----+
-                    |
-                  Motor
-                    |
-Ground Pin ---------+
-```
-
-## Software Setup
-
-1. Enable I2C interface:
-```bash
-sudo raspi-config
-# Navigate to Interface Options → I2C → Enable
-sudo reboot
-```
-
-2. Install required packages:
-```bash
-sudo apt-get update
-sudo apt-get install python3-smbus i2c-tools python3-gpiozero
-```
-
-3. Verify MPU6050 connection:
-```bash
-sudo i2cdetect -y 1
-```
-You should see the device at address 0x68.
 
 ## Running the Experiment
 
@@ -87,6 +58,3 @@ Example data format:
 timestamp,motor_state,acc_x,acc_y,acc_z,gyro_x,gyro_y,gyro_z,temp
 2024-10-31T12:00:00.000,0,0.05,-0.02,1.00,-0.21,0.35,-0.15,25.6
 ```
-
-## Note
-This setup is intended for use with a small motor drawing less than 16mA. For larger motors, additional circuitry (transistor, protection diode) would be required to protect the GPIO pins.
