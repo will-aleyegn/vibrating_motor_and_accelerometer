@@ -3,7 +3,9 @@
 the three scripts are 
  - reading the accelerometer for 60s and saving to csv
  - reading the accelerometer for 5s > turning on the motor > reading the accelerometer for an additional 5s and saving to csv
- - script to plot the saved data 
+ - script to plot the saved data
+
+the data folder contains one run of the motor script and the plotted results
 
 ## Hardware Components
 - Raspberry Pi (with GPIO pins)
