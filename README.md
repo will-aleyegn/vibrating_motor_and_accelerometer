@@ -1,5 +1,10 @@
 # Vibrating Motor and MPU6050 Accelerometer Setup
 
+the three scripts are 
+ - reading the accelerometer for 60s and saving to csv
+ - reading the accelerometer for 5s > turning on the motor > reading the accelerometer for an additional 5s and saving to csv
+ - script to plot the saved data 
+
 ## Hardware Components
 - Raspberry Pi (with GPIO pins)
 - MPU6050 Accelerometer/Gyroscope module
